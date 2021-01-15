@@ -17,7 +17,6 @@
     "lint": "eslint --ext .js,.ts . --cache --report-unused-disable-directives",
     "test:ci:cocoapods": "ruby packages/platform-ios/native_modules.rb",
     "flow-check": "flow check",
-    "postinstall": "yarn build",
     "publish": "yarn build-clean-all && yarn install && lerna publish"
   },
   "dependencies": {
