@@ -376,10 +376,8 @@ function getBuildPath(configuration, appName, isDevice, scheme) {
 }
 
 function getProductName(buildOutput) {
-  const productNameMatch = /export FULL_PRODUCT_NAME="?(.+).app"?$/m.exec(
-    buildOutput,
-  );
-  return productNameMatch ? productNameMatch[1] : null;
+   const productNameMatch = /export FULL_PRODUCT_NAME\\?="?(.+).app"?$/m.exec(buildOutput);
+   return productNameMatch ? productNameMatch[1].replace(/(?:\\(.))/g, '$1') : null;
 }
 
 function xcprettyAvailable() {
